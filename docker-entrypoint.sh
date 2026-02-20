@@ -78,7 +78,7 @@ fi
 REQUIREMENTS_FILE="/home/node/.openclaw/workspace/requirements.txt"
 if [ -f "$REQUIREMENTS_FILE" ]; then
   echo "Installing Python dependencies from workspace..."
-  python3 -m pip install --quiet --no-cache-dir -r "$REQUIREMENTS_FILE" 2>&1 | grep -v "already satisfied" || true
+  python3 -m pip install --quiet --no-cache-dir --break-system-packages -r "$REQUIREMENTS_FILE" 2>&1 | grep -v "already satisfied" || true
   echo "✅ Python dependencies installed"
 fi
 
