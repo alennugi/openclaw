@@ -1,5 +1,5 @@
 import type { OpenClawConfig } from "../../../config/config.js";
-import { secrets } from "../infra/secrets.js";
+import { secrets } from "../../../infra/secrets.js";
 import type { DiscordGuildEntry } from "../../../config/types.discord.js";
 import type { DmPolicy } from "../../../config/types.js";
 import {
