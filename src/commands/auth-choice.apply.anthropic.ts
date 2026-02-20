@@ -1,4 +1,5 @@
 import { upsertAuthProfile } from "../agents/auth-profiles.js";
+import { secrets } from "../infra/secrets.js";
 import {
   formatApiKeyPreview,
   normalizeApiKeyInput,
@@ -71,7 +72,7 @@ export async function applyAuthChoiceAnthropic(
 
     let nextConfig = params.config;
     let hasCredential = false;
-    const envKey = process.env.ANTHROPIC_API_KEY?.trim();
+    const envKey = secrets.ANTHROPIC_API_KEY?.trim();
 
     if (params.opts?.token) {
       await setAnthropicApiKey(normalizeApiKeyInput(params.opts.token), params.agentDir);

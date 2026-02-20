@@ -1,21 +1,30 @@
 import type { OpenClawConfig } from "../../../config/config.js";
+import { secrets } from "../infra/secrets.js";
 import type { DiscordGuildEntry } from "../../../config/types.discord.js";
+import { secrets } from "../infra/secrets.js";
 import type { DmPolicy } from "../../../config/types.js";
+import { secrets } from "../infra/secrets.js";
 import {
   listDiscordAccountIds,
   resolveDefaultDiscordAccountId,
   resolveDiscordAccount,
 } from "../../../discord/accounts.js";
 import { normalizeDiscordSlug } from "../../../discord/monitor/allow-list.js";
+import { secrets } from "../infra/secrets.js";
 import {
   resolveDiscordChannelAllowlist,
   type DiscordChannelResolution,
 } from "../../../discord/resolve-channels.js";
 import { resolveDiscordUserAllowlist } from "../../../discord/resolve-users.js";
+import { secrets } from "../infra/secrets.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../../../routing/session-key.js";
+import { secrets } from "../infra/secrets.js";
 import { formatDocsLink } from "../../../terminal/links.js";
+import { secrets } from "../infra/secrets.js";
 import type { WizardPrompter } from "../../../wizard/prompts.js";
+import { secrets } from "../infra/secrets.js";
 import type { ChannelOnboardingAdapter, ChannelOnboardingDmPolicy } from "../onboarding-types.js";
+import { secrets } from "../infra/secrets.js";
 import { promptChannelAccessConfig } from "./channel-access.js";
 import { addWildcardAllowFrom, promptAccountId, promptResolvedAllowFrom } from "./helpers.js";
 
@@ -263,7 +272,7 @@ export const discordOnboardingAdapter: ChannelOnboardingAdapter = {
     });
     const accountConfigured = Boolean(resolvedAccount.token);
     const allowEnv = discordAccountId === DEFAULT_ACCOUNT_ID;
-    const canUseEnv = allowEnv && Boolean(process.env.DISCORD_BOT_TOKEN?.trim());
+    const canUseEnv = allowEnv && Boolean(secrets.DISCORD_BOT_TOKEN?.trim());
     const hasConfigToken = Boolean(resolvedAccount.config.token);
 
     let token: string | null = null;

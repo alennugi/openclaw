@@ -1,5 +1,7 @@
 import { resolveEnvApiKey } from "../agents/model-auth.js";
+import { secrets } from "../infra/secrets.js";
 import { upsertSharedEnvVar } from "../infra/env-file.js";
+import { secrets } from "../infra/secrets.js";
 import {
   formatApiKeyPreview,
   normalizeApiKeyInput,
@@ -62,8 +64,8 @@ export async function applyAuthChoiceOpenAI(
           key: "OPENAI_API_KEY",
           value: envKey.apiKey,
         });
-        if (!process.env.OPENAI_API_KEY) {
-          process.env.OPENAI_API_KEY = envKey.apiKey;
+        if (!secrets.OPENAI_API_KEY) {
+          secrets.OPENAI_API_KEY = envKey.apiKey;
         }
         await params.prompter.note(
           `Copied OPENAI_API_KEY to ${result.path} for launchd compatibility.`,
@@ -88,7 +90,7 @@ export async function applyAuthChoiceOpenAI(
       key: "OPENAI_API_KEY",
       value: trimmed,
     });
-    process.env.OPENAI_API_KEY = trimmed;
+    secrets.OPENAI_API_KEY = trimmed;
     await params.prompter.note(
       `Saved OPENAI_API_KEY to ${result.path} for launchd compatibility.`,
       "OpenAI API key",

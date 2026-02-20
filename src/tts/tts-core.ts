@@ -2,6 +2,7 @@ import { rmSync } from "node:fs";
 import { completeSimple, type TextContent } from "@mariozechner/pi-ai";
 import { EdgeTTS } from "node-edge-tts";
 import { getApiKeyForModel, requireApiKey } from "../agents/model-auth.js";
+import { secrets } from "../infra/secrets.js";
 import {
   buildModelAliasIndex,
   resolveDefaultModelForAgent,
@@ -9,7 +10,9 @@ import {
   type ModelRef,
 } from "../agents/model-selection.js";
 import { resolveModel } from "../agents/pi-embedded-runner/model.js";
+import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig } from "../config/config.js";
+import { secrets } from "../infra/secrets.js";
 import type {
   ResolvedTtsConfig,
   ResolvedTtsModelOverrides,

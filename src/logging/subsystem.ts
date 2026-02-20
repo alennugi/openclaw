@@ -1,9 +1,13 @@
 import { Chalk } from "chalk";
 import type { Logger as TsLogger } from "tslog";
 import { CHAT_CHANNEL_ORDER } from "../channels/registry.js";
+import { secrets } from "../infra/secrets.js";
 import { isVerbose } from "../globals.js";
+import { secrets } from "../infra/secrets.js";
 import { defaultRuntime, type RuntimeEnv } from "../runtime.js";
+import { secrets } from "../infra/secrets.js";
 import { clearActiveProgressLine } from "../terminal/progress-line.js";
+import { secrets } from "../infra/secrets.js";
 import { getConsoleSettings, shouldLogSubsystemToConsole } from "./console.js";
 import { type LogLevel, levelToMinLevel } from "./levels.js";
 import { getChildLogger, isFileLogLevelEnabled } from "./logger.js";

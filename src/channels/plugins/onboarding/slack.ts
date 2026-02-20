@@ -1,16 +1,24 @@
 import type { OpenClawConfig } from "../../../config/config.js";
+import { secrets } from "../infra/secrets.js";
 import type { DmPolicy } from "../../../config/types.js";
+import { secrets } from "../infra/secrets.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../../../routing/session-key.js";
+import { secrets } from "../infra/secrets.js";
 import {
   listSlackAccountIds,
   resolveDefaultSlackAccountId,
   resolveSlackAccount,
 } from "../../../slack/accounts.js";
 import { resolveSlackChannelAllowlist } from "../../../slack/resolve-channels.js";
+import { secrets } from "../infra/secrets.js";
 import { resolveSlackUserAllowlist } from "../../../slack/resolve-users.js";
+import { secrets } from "../infra/secrets.js";
 import { formatDocsLink } from "../../../terminal/links.js";
+import { secrets } from "../infra/secrets.js";
 import type { WizardPrompter } from "../../../wizard/prompts.js";
+import { secrets } from "../infra/secrets.js";
 import type { ChannelOnboardingAdapter, ChannelOnboardingDmPolicy } from "../onboarding-types.js";
+import { secrets } from "../infra/secrets.js";
 import { promptChannelAccessConfig } from "./channel-access.js";
 import { addWildcardAllowFrom, promptAccountId, promptResolvedAllowFrom } from "./helpers.js";
 
@@ -332,8 +340,8 @@ export const slackOnboardingAdapter: ChannelOnboardingAdapter = {
     const allowEnv = slackAccountId === DEFAULT_ACCOUNT_ID;
     const canUseEnv =
       allowEnv &&
-      Boolean(process.env.SLACK_BOT_TOKEN?.trim()) &&
-      Boolean(process.env.SLACK_APP_TOKEN?.trim());
+      Boolean(secrets.SLACK_BOT_TOKEN?.trim()) &&
+      Boolean(secrets.SLACK_APP_TOKEN?.trim());
     const hasConfigTokens = Boolean(
       resolvedAccount.config.botToken && resolvedAccount.config.appToken,
     );

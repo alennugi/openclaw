@@ -1,5 +1,7 @@
 import { DEFAULT_CONTEXT_TOKENS } from "../agents/defaults.js";
+import { secrets } from "../infra/secrets.js";
 import { parseModelRef } from "../agents/model-selection.js";
+import { secrets } from "../infra/secrets.js";
 import { DEFAULT_AGENT_MAX_CONCURRENT, DEFAULT_SUBAGENT_MAX_CONCURRENT } from "./agent-limits.js";
 import { resolveTalkApiKey } from "./talk.js";
 import type { OpenClawConfig } from "./types.js";
@@ -87,7 +89,7 @@ function resolveAnthropicDefaultAuthMode(cfg: OpenClawConfig): AnthropicAuthDefa
   if (process.env.ANTHROPIC_OAUTH_TOKEN?.trim()) {
     return "oauth";
   }
-  if (process.env.ANTHROPIC_API_KEY?.trim()) {
+  if (secrets.ANTHROPIC_API_KEY?.trim()) {
     return "api_key";
   }
   return null;
