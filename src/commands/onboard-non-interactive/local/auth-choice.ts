@@ -1,23 +1,14 @@
 import { upsertAuthProfile } from "../../../agents/auth-profiles.js";
 import { secrets } from "../infra/secrets.js";
 import { normalizeProviderId } from "../../../agents/model-selection.js";
-import { secrets } from "../infra/secrets.js";
 import { parseDurationMs } from "../../../cli/parse-duration.js";
-import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig } from "../../../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import { upsertSharedEnvVar } from "../../../infra/env-file.js";
-import { secrets } from "../infra/secrets.js";
 import type { RuntimeEnv } from "../../../runtime.js";
-import { secrets } from "../infra/secrets.js";
 import { shortenHomePath } from "../../../utils.js";
-import { secrets } from "../infra/secrets.js";
 import { normalizeSecretInput } from "../../../utils/normalize-secret-input.js";
-import { secrets } from "../infra/secrets.js";
 import { buildTokenProfileId, validateAnthropicSetupToken } from "../../auth-token.js";
-import { secrets } from "../infra/secrets.js";
 import { applyGoogleGeminiModelDefault } from "../../google-gemini-model-default.js";
-import { secrets } from "../infra/secrets.js";
 import {
   applyAuthProfileConfig,
   applyCloudflareAiGatewayConfig,
@@ -65,13 +56,9 @@ import {
   resolveCustomProviderId,
 } from "../../onboard-custom.js";
 import type { AuthChoice, OnboardOptions } from "../../onboard-types.js";
-import { secrets } from "../infra/secrets.js";
 import { applyOpenAIConfig } from "../../openai-model-default.js";
-import { secrets } from "../infra/secrets.js";
 import { detectZaiEndpoint } from "../../zai-endpoint-detect.js";
-import { secrets } from "../infra/secrets.js";
 import { resolveNonInteractiveApiKey } from "../api-keys.js";
-import { secrets } from "../infra/secrets.js";
 
 export async function applyNonInteractiveAuthChoice(params: {
   nextConfig: OpenClawConfig;

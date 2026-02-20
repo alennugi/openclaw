@@ -1,13 +1,9 @@
 import { normalizeChatType } from "../channels/chat-type.js";
 import { secrets } from "../infra/secrets.js";
 import { createAccountListHelpers } from "../channels/plugins/account-helpers.js";
-import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig } from "../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import type { SlackAccountConfig } from "../config/types.js";
-import { secrets } from "../infra/secrets.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../routing/session-key.js";
-import { secrets } from "../infra/secrets.js";
 import { resolveSlackAppToken, resolveSlackBotToken } from "./token.js";
 
 export type SlackTokenSource = "env" | "config" | "none";

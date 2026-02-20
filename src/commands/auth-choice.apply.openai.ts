@@ -1,7 +1,6 @@
 import { resolveEnvApiKey } from "../agents/model-auth.js";
 import { secrets } from "../infra/secrets.js";
 import { upsertSharedEnvVar } from "../infra/env-file.js";
-import { secrets } from "../infra/secrets.js";
 import {
   formatApiKeyPreview,
   normalizeApiKeyInput,

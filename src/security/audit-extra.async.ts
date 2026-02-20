@@ -8,37 +8,23 @@ import path from "node:path";
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { secrets } from "../infra/secrets.js";
 import { isToolAllowedByPolicies } from "../agents/pi-tools.policy.js";
-import { secrets } from "../infra/secrets.js";
 import {
   resolveSandboxConfigForAgent,
   resolveSandboxToolPolicyForAgent,
 } from "../agents/sandbox.js";
 import type { SandboxToolPolicy } from "../agents/sandbox/types.js";
-import { secrets } from "../infra/secrets.js";
 import { loadWorkspaceSkillEntries } from "../agents/skills.js";
-import { secrets } from "../infra/secrets.js";
 import { resolveToolProfilePolicy } from "../agents/tool-policy.js";
-import { secrets } from "../infra/secrets.js";
 import { listAgentWorkspaceDirs } from "../agents/workspace-dirs.js";
-import { secrets } from "../infra/secrets.js";
 import { MANIFEST_KEY } from "../compat/legacy-names.js";
-import { secrets } from "../infra/secrets.js";
 import { resolveNativeSkillsEnabled } from "../config/commands.js";
-import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig, ConfigFileSnapshot } from "../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import { createConfigIO } from "../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import { collectIncludePathsRecursive } from "../config/includes-scan.js";
-import { secrets } from "../infra/secrets.js";
 import { resolveOAuthDir } from "../config/paths.js";
-import { secrets } from "../infra/secrets.js";
 import type { AgentToolsConfig } from "../config/types.tools.js";
-import { secrets } from "../infra/secrets.js";
 import { normalizePluginsConfig } from "../plugins/config-state.js";
-import { secrets } from "../infra/secrets.js";
 import { normalizeAgentId } from "../routing/session-key.js";
-import { secrets } from "../infra/secrets.js";
 import {
   formatPermissionDetail,
   formatPermissionRemediation,

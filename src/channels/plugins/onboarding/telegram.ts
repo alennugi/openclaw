@@ -1,24 +1,17 @@
 import { formatCliCommand } from "../../../cli/command-format.js";
 import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig } from "../../../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import type { DmPolicy } from "../../../config/types.js";
-import { secrets } from "../infra/secrets.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../../../routing/session-key.js";
-import { secrets } from "../infra/secrets.js";
 import {
   listTelegramAccountIds,
   resolveDefaultTelegramAccountId,
   resolveTelegramAccount,
 } from "../../../telegram/accounts.js";
 import { formatDocsLink } from "../../../terminal/links.js";
-import { secrets } from "../infra/secrets.js";
 import type { WizardPrompter } from "../../../wizard/prompts.js";
-import { secrets } from "../infra/secrets.js";
 import { fetchTelegramChatId } from "../../telegram/api.js";
-import { secrets } from "../infra/secrets.js";
 import type { ChannelOnboardingAdapter, ChannelOnboardingDmPolicy } from "../onboarding-types.js";
-import { secrets } from "../infra/secrets.js";
 import { addWildcardAllowFrom, mergeAllowFromEntries, promptAccountId } from "./helpers.js";
 
 const channel = "telegram" as const;

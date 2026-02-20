@@ -10,9 +10,7 @@ import {
   type ModelRef,
 } from "../agents/model-selection.js";
 import { resolveModel } from "../agents/pi-embedded-runner/model.js";
-import { secrets } from "../infra/secrets.js";
 import type { OpenClawConfig } from "../config/config.js";
-import { secrets } from "../infra/secrets.js";
 import type {
   ResolvedTtsConfig,
   ResolvedTtsModelOverrides,

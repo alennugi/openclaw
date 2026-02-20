@@ -1,7 +1,6 @@
 import { DEFAULT_CONTEXT_TOKENS } from "../agents/defaults.js";
 import { secrets } from "../infra/secrets.js";
 import { parseModelRef } from "../agents/model-selection.js";
-import { secrets } from "../infra/secrets.js";
 import { DEFAULT_AGENT_MAX_CONCURRENT, DEFAULT_SUBAGENT_MAX_CONCURRENT } from "./agent-limits.js";
 import { resolveTalkApiKey } from "./talk.js";
 import type { OpenClawConfig } from "./types.js";
