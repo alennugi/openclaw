@@ -3,6 +3,7 @@ import type { BaseTokenResolution } from "../channels/plugins/types.js";
 import type { OpenClawConfig } from "../config/config.js";
 import type { TelegramAccountConfig } from "../config/types.telegram.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../routing/session-key.js";
+import { secrets } from "../infra/secrets.js";
 
 export type TelegramTokenSource = "env" | "tokenFile" | "config" | "none";
 
@@ -93,7 +94,7 @@ export function resolveTelegramToken(
     return { token: configToken, source: "config" };
   }
 
-  const envToken = allowEnv ? (opts.envToken ?? process.env.TELEGRAM_BOT_TOKEN)?.trim() : "";
+  const envToken = allowEnv ? (opts.envToken ?? secrets.TELEGRAM_BOT_TOKEN)?.trim() : "";
   if (envToken) {
     return { token: envToken, source: "env" };
   }

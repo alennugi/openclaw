@@ -26,6 +26,7 @@ import { logVerbose } from "../globals.js";
 import { stripMarkdown } from "../line/markdown-to-line.js";
 import { isVoiceCompatibleAudio } from "../media/audio.js";
 import { CONFIG_DIR, resolveUserPath } from "../utils.js";
+import { secrets } from "../infra/secrets.js";
 import {
   edgeTTS,
   elevenLabsTTS,
@@ -499,10 +500,10 @@ export function resolveTtsApiKey(
   provider: TtsProvider,
 ): string | undefined {
   if (provider === "elevenlabs") {
-    return config.elevenlabs.apiKey || process.env.ELEVENLABS_API_KEY || process.env.XI_API_KEY;
+    return config.elevenlabs.apiKey || secrets.ELEVENLABS_API_KEY || secrets.XI_API_KEY;
   }
   if (provider === "openai") {
-    return config.openai.apiKey || process.env.OPENAI_API_KEY;
+    return config.openai.apiKey || secrets.OPENAI_API_KEY;
   }
   return undefined;
 }

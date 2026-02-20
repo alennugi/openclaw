@@ -1,6 +1,7 @@
 import type { BaseTokenResolution } from "../channels/plugins/types.js";
 import type { OpenClawConfig } from "../config/config.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../routing/session-key.js";
+import { secrets } from "../infra/secrets.js";
 
 export type DiscordTokenSource = "env" | "config" | "none";
 
@@ -41,7 +42,7 @@ export function resolveDiscordToken(
   }
 
   const envToken = allowEnv
-    ? normalizeDiscordToken(opts.envToken ?? process.env.DISCORD_BOT_TOKEN)
+    ? normalizeDiscordToken(opts.envToken ?? secrets.DISCORD_BOT_TOKEN)
     : undefined;
   if (envToken) {
     return { token: envToken, source: "env" };
