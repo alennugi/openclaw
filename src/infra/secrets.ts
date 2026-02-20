@@ -31,7 +31,7 @@ export function getSecret(name: string): string | undefined {
         return value;
       }
     } catch (err) {
-      log.error(`failed to read Docker secret ${name}:`, err);
+      log.error(`failed to read Docker secret ${name}:`, { error: String(err) });
     }
   }
 
